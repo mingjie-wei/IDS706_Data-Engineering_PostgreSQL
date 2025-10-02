@@ -1,7 +1,6 @@
 # IDS706_Data-Engineering_PostgreSQL
 
-A tiny PostgreSQL project using the **duke_restaurants** dataset.  
-This repo shows **4 SQL tasks** with **side-by-side results** and is fully reproducible with VS Code Dev Containers / Docker.
+A tiny PostgreSQL project using the **duke_restaurants** dataset. This repo shows 4 SQL tasks with side-by-side results and is fully reproducible with VS Code Dev Containers / Docker.
 
 ## Dataset & Schema
 Table: **restaurants**
@@ -20,7 +19,7 @@ Table: **restaurants**
 ![Dataset](scripts/images/dataset.png)
 
 ## SQL Queries & Outputs
-#### Q1: Return name, distance_miles for restaurants within 2.0 miles, ordered by distance.
+### Q1: Return name, distance_miles for restaurants within 2.0 miles, ordered by distance.
 ```
 select name, distance_miles
 from restaurants
@@ -29,7 +28,7 @@ order by distance_miles;
 ```
 ![Q1](scripts/images/Q1.png)
 
-#### Q2: Show the top 3 restaurants by rating (highest first).
+### Q2: Show the top 3 restaurants by rating (highest first).
 ```
 select name, rating
 from restaurants
@@ -38,14 +37,14 @@ limit 3;
 ```
 ![Q2](scripts/images/Q2.png)
 
-#### Q3: List name, avg_cost and cost with 7.5% tax as cost_with_tax.
+### Q3: List name, avg_cost and cost with 7.5% tax as cost_with_tax.
 ```
 select name, avg_cost, (avg_cost * 1.075) as cost_with_tax
 from restaurants;
 ```
 ![Q3](scripts/images/Q3.png)
 
-#### Q4: How many restaurants are there per cuisine, highest count first?
+### Q4: How many restaurants are there per cuisine, highest count first?
 ```
 select cuisine, count(*) as restaurant_count
 from restaurants
